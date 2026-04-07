@@ -1,0 +1,173 @@
+/* Custom Properties */
+:root {
+    --primary: #094998;
+    --secondary: #0b63d5;
+    --accent: #4fe0ff;
+    --dark: #1a202c;
+    --light-bg: #f7fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+header { background: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.logo span { color: #444; }
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: #4a5568; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+.btn-signup { background: var(--primary); color: white !important; padding: 0.5rem 1.5rem; border-radius: 6px; }
+
+/* Hero Section */
+.hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 100px 0; }
+.hero-wrapper { display: flex; align-items: center; gap: 50px; }
+.hero-content { flex: 1; }
+.badge { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
+.highlight { color: var(--accent); }
+.hero p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+.hero-btns { display: flex; gap: 15px; }
+.btn-get { background: var(--accent); border: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn-know { background: transparent; border: 2px solid white; color: white; padding: 15px 30px; border-radius: 8px; cursor: pointer; }
+
+/* Hero Image */
+.hero-image { flex: 1; display: flex; justify-content: center; }
+.image-circle { width: 420px; height: 420px; border-radius: 50%; border: 12px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+.image-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Common Grid & Titles */
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--primary); }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+/* Why Choose Section */
+.why-choose { padding: 80px 0; background: white; }
+.card-simple { text-align:center; padding: 30px; background: var(--light-bg); border-radius: 12px; transition: 0.3s; }
+.card-simple:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.icon-small { font-size: 2rem; margin-bottom: 15px; }
+
+/* Features Section */
+.features-section { padding: 80px 0; background: var(--light-bg); }
+.feature-card { background: #fff; padding: 40px 30px; border-radius: 15px; text-align: center; border: 1px solid #edf2f7; transition: 0.3s; }
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
+.feature-card .icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+.feature-card h3 { color: var(--primary); margin-bottom: 10px; }
+
+/* Applications Section - Strict 3x2 Grid with Original Effects */
+.apps-section { 
+    padding: 80px 0; 
+    background: white; 
+}
+
+.app-grid { 
+    display: grid; 
+    /* Strictly 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.app-item { 
+    padding: 25px; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 10px; 
+    text-align: center; 
+    font-weight: 700; 
+    transition: 0.3s; 
+    cursor: pointer;
+    /* Box alignment fix */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Aapka purana hover effect wapas add kiya gaya hai */
+.app-item:hover { 
+    background: var(--primary); 
+    color: white; 
+    border-color: var(--primary); 
+    transform: translateY(-5px); /* Chhota sa jump effect */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile responsive (768px se niche 2 columns, 480px par 1) */
+@media (max-width: 992px) {
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section (Glassmorphism) */
+.contact-section { padding: 100px 0; background: var(--primary); color: white; }
+.contact-box { max-width: 700px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 50px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+.form-row { display: flex; gap: 15px; }
+input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ddd; outline: none; resize: none;}
+.btn-submit { width: 100%; padding: 15px; background: var(--accent); color: var(--primary); border: none; border-radius: 6px; font-weight: 800; font-size: 1rem; cursor: pointer; text-transform: uppercase; }
+.consent { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; font-size: 0.85rem; }
+.consent input { width: auto; margin: 0; }
+
+/* Login Section  */
+
+.Login-section { 
+    padding: 100px 0; 
+    background: rgb(243, 242, 242); /* Fixed extra parenthesis */
+    color: white; 
+}
+
+.Login-box { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    background: rgba(22, 82, 157, 0.9); 
+    padding: 50px; 
+    border-radius: 20px; 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    text-align: center;
+}
+
+/* Ensure rows stack vertically, but items inside (buttons) stay side-by-side */
+.form-row { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 15px; 
+}
+
+input { 
+    width: 100%; 
+    padding: 12px; 
+    border-radius: 6px; 
+    border: 1px solid #ddd; 
+    outline: none; 
+}
+
+.btn-login { 
+    width: 100%; 
+    padding: 15px; 
+    background: #00d4ff; /* Replace with your var(--accent) */
+    color: #16529d;    /* Replace with your var(--primary) */
+    border: none; 
+    border-radius: 6px; 
+    font-weight: 800; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+}
+
+/* Footer */
+footer { text-align: center; padding: 40px; background: #1a202c; color: #a0aec0; font-size: 0.9rem; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hero-wrapper { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    .image-circle { width: 300px; height: 300px; }
+    .form-row { flex-direction: column; gap: 0; }
+    .nav-links { display: none; }
+}
