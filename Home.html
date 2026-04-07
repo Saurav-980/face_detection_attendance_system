@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendancePro | Smart Face Recognition</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='Home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Attendance<span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="{{ url_for('report') }}" class="btn-signup">Attendance Report</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <span class="badge">AI-Powered System</span>
+                <h1>Face Recognition <br><span class="highlight">Attendance System</span></h1>
+                <p>Eliminate manual errors and proxy attendance with our Next-Gen Face Recognition Technology. Fast, Secure, and Contactless.</p>
+                <div class="hero-btns">
+                    <a href="{{ url_for('make_attendance') }}" style="text-decoration: none;">
+                    <button class="btn-get">Make Attendance</button></a>
+                    
+                    <a href="#login" style="text-decoration: none;">
+                    <button class="btn-know">Add Students</button></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-circle">
+                    <img src="{{ url_for('static', filename='photo1.png') }}" alt="Saurav Shubham">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our System?</h2>
+            <div class="grid-3">
+                <div class="card-simple">
+                    <div class="icon-small">🛡️</div>
+                    <h3>Contactless Tracking</h3>
+                    <p>In today’s world, safety is a priority. Our system offers a completely hands-free attendance process. Students just need to look at the camera, and the AI handles the rest with instant voice feedback—no physical registers or biometric touch required.</p>
+                </div>
+                <div class="card-simple">
+                    <div class="icon-small">📈</div>
+                    <h3>Real-Time Data Insights</h3>
+                    <p>Forget manual data entry at the end of the day. Our system automatically syncs every attendance record to a Live Dashboard. Admin can monitor daily logs, track entry times, and generate reports instantly with our integrated CSV-to-Web technology</p>
+                </div>
+                <div class="card-simple">
+                    <div class="icon-small">📍</div>
+                    <h3>Anti-Proxy AI Verification</h3>
+                    <p>Our system uses advanced KNN (K-Nearest Neighbors) and Computer Vision to ensure that only registered individuals can mark their attendance. It provides 100% accuracy by verifying the unique facial features of each student, making proxy attendance impossible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Features & Benefits</h2>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Mobile Attendance</h3>
+                    <p>GPS based check-in with selfie for remote and field employees.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📅</div>
+                    <h3>Leave Management</h3>
+                    <p>Customizable leave policies and easy approval workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏢</div>
+                    <h3>Multi Branch</h3>
+                    <p>Manage multiple office locations from a single central account.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔔</div>
+                    <h3>Smart Alerts</h3>
+                    <p>Real-time email and mobile notifications for late arrivals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Detailed Reports</h3>
+                    <p>Export ready-to-use payroll reports in Excel or PDF formats.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👤</div>
+                    <h3>Visitor Mgmt</h3>
+                    <p>Track visitors and temporary staff with the same face-ID system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="applications" class="apps-section">
+        <div class="container">
+            <h2 class="section-title">Applications</h2>
+            <div class="app-grid">
+                <div class="app-item">Time & Attendance</div>
+                <div class="app-item">Access Control</div>
+                <div class="app-item">Visitor Management</div>
+                <div class="app-item">Cafeteria Tracking</div>
+                <div class="app-item">Contract Workers</div>
+                <div class="app-item">Job Processing</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h2 class="section-title" style="color: white;">Get in Touch</h2>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name *" required>
+                        <input type="text" placeholder="Last Name *" required>
+                    </div>
+                    <input type="text" placeholder="Company Name *" required>
+                    <select required>
+                        <option value="">Usage Purpose? *</option>
+                        <option value="own">Internal Use</option>
+                        <option value="reselling">Reselling</option>
+                    </select>
+                    <input type="tel" placeholder="Contact Number *" required>
+                    <input type="email" placeholder="Business Email *" required>
+                    <textarea placeholder="Your Specific Requirements"></textarea>
+                    <label class="consent">
+                        <input type="checkbox" required> 
+                        <span>I agree to the Privacy Policy.</span>
+                    </label>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+  
+   <section id="login" class="Login-section">
+    <div class="container">
+        <div class="Login-box">
+            <h2 class="section-title" style="color: white;">Log In</h2>
+            <form class="contact-form" action="/login" method="POST">
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Enter Your Email *" required>
+                </div>
+
+                <div class="form-row">
+                    <input type="password" name="password" placeholder="Password *" required>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="btn-login">Log In</button>
+                    <button type="button" class="btn-login">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2026 AttendancePro System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

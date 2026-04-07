@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="report-wrapper">
+    <div class="report-header">
+        <div class="title-box">
+            <h1>Attendance Report</h1>
+            <p class="current-date">Date: {{ date }}</p>
+        </div>
+        <a href="/" class="btn-home">← Back to Home</a>
+    </div>
+
+    <div class="data-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Branch</th>
+                    <th>Course</th>
+                    <th>Time In</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td><span class="highlight-name">{{ row['NAME'] }}</span></td>
+                    <td>{{ row['ROLL_NO'] }}</td>
+                    <td>{{ row['BRANCH'] }}</td>
+                    <td>{{ row['COURSE'] }}</td>
+                    <td><span class="status-chip">{{ row['TIME'] }}</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if not data %}
+        <div class="empty-state">
+            <p>Aaj ki koi attendance record nahi mili.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
